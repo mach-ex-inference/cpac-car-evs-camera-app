@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<permissions>
+    <privapp-permissions package="se.cpacsystems.carevscamera">
+        <permission name="android.car.permission.REQUEST_CAR_EVS_ACTIVITY"/>
+        <permission name="android.car.permission.CONTROL_CAR_EVS_ACTIVITY"/>
+        <permission name="android.car.permission.USE_CAR_EVS_CAMERA"/>
+        <permission name="android.car.permission.MONITOR_CAR_EVS_STATUS"/>
+    </privapp-permissions>
+
+</permissions>

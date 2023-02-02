@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dashboard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/playIndicator"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/stopIndicator"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_play_arrow_24"
+        app:tint="#A04CAF50" />
+
+    <ImageView
+        android:id="@+id/stopIndicator"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/frameDroppedIndicator"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/playIndicator"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_stop_24"
+        app:tint="#A0FFEB3B" />
+
+    <ImageView
+        android:id="@+id/frameDroppedIndicator"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/timeoutIndicator"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/stopIndicator"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_healing_24"
+        app:tint="#A0FFEB3B" />
+
+    <ImageView
+        android:id="@+id/timeoutIndicator"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:padding="16dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/frameDroppedIndicator"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_freeze_24"
+        app:tint="#A0FFEB3B" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
