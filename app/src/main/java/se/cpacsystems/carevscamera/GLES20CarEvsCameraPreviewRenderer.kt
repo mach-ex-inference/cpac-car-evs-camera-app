@@ -227,7 +227,7 @@ class GLES20CarEvsCameraPreviewRenderer(private val mFrameProvider: FrameProvide
     }
 
     fun renderDrawable(drawable: Drawable) {
-        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.HARDWARE)
+        val bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888)
         val canvas = Canvas(bitmap)
         drawable.setBounds(0, 0, width, height)
         drawable.draw(canvas)

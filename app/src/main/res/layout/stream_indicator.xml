@@ -17,8 +17,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_play_arrow_24"
-        app:tint="#A04CAF50" />
+        app:srcCompat="@drawable/ic_play_24"
+        app:tint="@color/indicator_green" />
 
     <ImageView
         android:id="@+id/stopIndicator"
@@ -31,8 +31,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/playIndicator"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_stop_24"
-        app:tint="#A0FFEB3B" />
+        app:srcCompat="@drawable/ic_stop_24"
+        app:tint="@color/indicator_yellow" />
 
     <ImageView
         android:id="@+id/frameDroppedIndicator"
@@ -44,7 +44,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/stopIndicator"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_healing_24"
+        app:srcCompat="@drawable/ic_dropped_frame_24"
         app:tint="#A0FFEB3B" />
 
     <ImageView
@@ -58,7 +58,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/frameDroppedIndicator"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_freeze_24"
+        app:srcCompat="@drawable/ic_timeout_24"
         app:tint="#A0FFEB3B" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

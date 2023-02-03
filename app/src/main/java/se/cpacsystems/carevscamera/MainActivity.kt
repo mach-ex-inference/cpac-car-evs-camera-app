@@ -7,6 +7,7 @@ import android.car.evs.CarEvsManager
 import android.car.evs.CarEvsManager.*
 import android.content.res.Resources
 import android.graphics.PixelFormat
+import android.graphics.PorterDuff.Mode.SRC_IN
 import android.hardware.HardwareBuffer
 import android.os.*
 import android.util.Log
@@ -17,6 +18,7 @@ import androidx.activity.viewModels
 import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -162,7 +164,7 @@ class MainActivity : AppCompatActivity() {
                                     carEvsStreamCallback).let { status ->
                                     when (status) {
                                         ERROR_UNAVAILABLE, ERROR_BUSY -> {
-                                            view.renderDrawable(resources.getDrawable(R.drawable.ic_baseline_camera_off_24, null))
+                                            view.renderDrawable(resources.getDrawable(R.drawable.ic_camera_off_24, null))
                                         }
                                     }
                                 }
@@ -239,46 +241,46 @@ class MainActivity : AppCompatActivity() {
 
             findViewById<ConstraintLayout>(R.id.rear_camera_stream_indicators)?.let { indicators ->
                 indicators.findViewById<ImageView>(R.id.playIndicator)?.apply {
-                    rearviewStreamStreamViewModel.playIndicatorVisibility
-                        .onEach { visibility = it }
+                    rearviewStreamStreamViewModel.playIndicatorTint
+                        .onEach { setColorFilter(ContextCompat.getColor(context, it), SRC_IN) }
                         .launchIn(MainScope())
                     }
                 indicators.findViewById<ImageView>(R.id.stopIndicator)?.apply {
-                    rearviewStreamStreamViewModel.stoppedIndicatorVisibility
-                        .onEach {visibility = it }
+                    rearviewStreamStreamViewModel.stoppedIndicatorTint
+                        .onEach { setColorFilter(ContextCompat.getColor(context, it), SRC_IN)  }
                         .launchIn(MainScope())
                 }
                 indicators.findViewById<ImageView>(R.id.frameDroppedIndicator)?.apply {
-                    rearviewStreamStreamViewModel.droppedFrameIndicatorVisibility
-                        .onEach {visibility = it }
+                    rearviewStreamStreamViewModel.droppedFrameIndicatorTint
+                        .onEach { setColorFilter(ContextCompat.getColor(context, it), SRC_IN)  }
                         .launchIn(MainScope())
                 }
                 indicators.findViewById<ImageView>(R.id.timeoutIndicator)?.apply {
-                    rearviewStreamStreamViewModel.timeoutIndicatorVisibility
-                        .onEach {visibility = it }
+                    rearviewStreamStreamViewModel.timeoutIndicatorTint
+                        .onEach { setColorFilter(ContextCompat.getColor(context, it), SRC_IN)  }
                         .launchIn(MainScope())
                 }
             }
 
             findViewById<ConstraintLayout>(R.id.front_camera_stream_indicators)?.let { indicators ->
                 indicators.findViewById<ImageView>(R.id.playIndicator)?.apply {
-                    frontviewStreamStreamViewModel.playIndicatorVisibility
-                        .onEach {visibility = it }
+                    frontviewStreamStreamViewModel.playIndicatorTint
+                        .onEach { setColorFilter(ContextCompat.getColor(context, it), SRC_IN) }
                         .launchIn(MainScope())
                 }
                 indicators.findViewById<ImageView>(R.id.stopIndicator)?.apply {
-                    frontviewStreamStreamViewModel.stoppedIndicatorVisibility
-                        .onEach {visibility = it }
+                    frontviewStreamStreamViewModel.stoppedIndicatorTint
+                        .onEach { setColorFilter(ContextCompat.getColor(context, it), SRC_IN) }
                         .launchIn(MainScope())
                 }
                 indicators.findViewById<ImageView>(R.id.frameDroppedIndicator)?.apply {
-                    frontviewStreamStreamViewModel.droppedFrameIndicatorVisibility
-                        .onEach {visibility = it }
+                    frontviewStreamStreamViewModel.droppedFrameIndicatorTint
+                        .onEach { setColorFilter(ContextCompat.getColor(context, it), SRC_IN) }
                         .launchIn(MainScope())
                 }
                 indicators.findViewById<ImageView>(R.id.timeoutIndicator)?.apply {
-                    frontviewStreamStreamViewModel.timeoutIndicatorVisibility
-                        .onEach {visibility = it }
+                    frontviewStreamStreamViewModel.timeoutIndicatorTint
+                        .onEach { setColorFilter(ContextCompat.getColor(context, it), SRC_IN) }
                         .launchIn(MainScope())
                 }
             }

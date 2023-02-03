@@ -1,6 +1,6 @@
-# CPAC EVS Camera App
+# CPAC CarEVS Camera App
 
-CPAC specific EvsCameraApp for usage on platforms that support multi-stream video through
+CPAC specific CarEVS Camera app for usage on platforms that support multi-stream video through
 the CarEvs 1.1 interface.
 
 

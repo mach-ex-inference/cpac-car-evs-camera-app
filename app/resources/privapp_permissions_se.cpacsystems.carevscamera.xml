@@ -6,5 +6,4 @@
         <permission name="android.car.permission.USE_CAR_EVS_CAMERA"/>
         <permission name="android.car.permission.MONITOR_CAR_EVS_STATUS"/>
     </privapp-permissions>
-
 </permissions>
