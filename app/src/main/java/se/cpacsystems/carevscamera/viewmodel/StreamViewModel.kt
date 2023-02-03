@@ -66,11 +66,11 @@ class StreamViewModel(private val droppedTimeout: Long, private val freezeTimeou
 
 
     val playIndicatorTint: Flow<Int> = _stateFlow.mapLatest {
-        if (it.play) R.color.indicator_gray else R.color.indicator_gray
+        if (it.play) R.color.indicator_green else R.color.indicator_gray
     }
 
     val stoppedIndicatorTint: Flow<Int> = _stateFlow.mapLatest {
-        if (it.stopped) R.color.indicator_black else R.color.indicator_black
+        if (it.stopped) R.color.indicator_black else R.color.indicator_gray
     }
 
     val droppedFrameIndicatorTint: Flow<Int> = _stateFlow.mapLatest {
